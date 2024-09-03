@@ -32,6 +32,9 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void Grab();
 
+	UFUNCTION(BlueprintCallable)
+	void ToggleGrab();
+
 private:
 	UPROPERTY(EditAnywhere)
 	float MaxGrabDist = 400;
@@ -43,4 +46,8 @@ private:
 	float HoldDist = 200;
 	
 	UPhysicsHandleComponent* GetPhysicsHandle() const;
+
+	bool HasGrabbed = false;
+
+	bool GetGrabbableInReach(FHitResult&);
 };

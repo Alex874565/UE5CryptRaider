@@ -7,6 +7,9 @@
 		{
 			"name": "UE5",
 			"path": "C:\\Program Files\\Epic Games\\UE_5.4"
+		},
+		{
+			"path": "E:/EpicGames/UE_5.4"
 		}
 	],
 	"settings": {
@@ -408,13 +411,13 @@
 					"CryptRaiderEditor",
 					"Win64",
 					"Development",
-					"C:\\Programare\\Games\\UE5\\CryptRaider\\CryptRaider.uproject",
+					"D:\\Programare\\Games\\UE5\\CryptRaider\\CryptRaider.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.4"
+					"cwd": "E:\\EpicGames\\UE_5.4"
 				}
 			},
 			{
