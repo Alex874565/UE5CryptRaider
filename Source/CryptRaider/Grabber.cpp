@@ -95,11 +95,11 @@ void UGrabber::ToggleGrab(){
 	HasGrabbed = !HasGrabbed;
 }
 
-bool UGrabber::GetGrabbableInReach(FHitResult& HitResult){
+bool UGrabber::GetGrabbableInReach(FHitResult& OutHitResult){
 	FVector Start = GetComponentLocation();
 	FVector End = Start + GetForwardVector() * MaxGrabDist;
 
-	return GetWorld() -> SweepSingleByChannel(HitResult, 
+	return GetWorld() -> SweepSingleByChannel(OutHitResult, 
 													Start, End, 
 													FQuat::Identity,
 													ECC_GameTraceChannel2, 
