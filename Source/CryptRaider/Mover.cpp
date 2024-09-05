@@ -36,3 +36,10 @@ void UMover::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponent
 	}
 }
 
+void UMover::SetShouldMove(bool NewShouldMove){
+	FString string;
+	string = NewShouldMove ? "true" : "false";
+	UE_LOG(LogTemp, Display, TEXT("%s"), *string)
+	ShouldMove = NewShouldMove;
+}
+

@@ -2,6 +2,8 @@
 
 
 #include "TriggerComponent.h"
+#include "Kismet/GameplayStatics.h"
+#include "Engine/World.h"
 
 UTriggerComponent::UTriggerComponent()
 {
@@ -28,4 +30,29 @@ void UTriggerComponent::TickComponent(float DeltaTime, ELevelTick TickType, FAct
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
+	TArray<AActor*> OverlappingActors;
+
+	GetOverlappingActors(OverlappingActors);
+
+	TArray<AActor*> LeftDoor;
+	TArray<AActor*> RightDoor;
+
+	if (OverlappingActors.Num() > 0){
+		UE_LOG(LogTemp, Display, TEXT("Should Move"));
+		for (UMover* Mover : Movers){
+			if(Mover){
+				Mover -> SetShouldMove(true);
+			}
+		}
+	}else{
+		for (UMover* Mover : Movers){
+			if(Mover){
+					Mover -> SetShouldMove(false);
+			}
+		}
+	}
+}
+
+void UTriggerComponent::SetMovers(TArray<UMover*> NewMovers){
+	Movers = NewMovers;
 }
